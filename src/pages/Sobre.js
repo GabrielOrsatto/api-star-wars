@@ -5,8 +5,8 @@ export default function Sobre() {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>
-        Gabriel Orsatto (1135097){"\n"}
-        Otávio Lorenzatto (1134984)
+        Gabriel Orsatto 1135097@atitus.edu.br (1135097){"\n"}
+        Otávio Lorenzatto 1134984@atitus.edu.br (1134984)
       </Text>
     </View>
   );
