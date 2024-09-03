@@ -5,12 +5,13 @@ import Personagem from './src/pages/Personagem';
 import Detalhes from './src/pages/Detalhes';
 import Sobre from './src/pages/Sobre';
 import { Button } from 'react-native';
+import StarWarsTheme from './src/pages/theme';  
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={StarWarsTheme}>
       <Stack.Navigator initialRouteName="Personagem">
         <Stack.Screen
           name="Personagem"
@@ -20,9 +21,9 @@ const App = () => {
             headerTitleAlign: "center",
             headerRight: () => (
               <Button
-                onPress={() => navigation.navigate(Sobre)}
+                onPress={() => navigation.navigate('Sobre')}  
                 title="Sobre"
-                color="#000"
+                color="#FFD700"  
               />
             ),
           })}

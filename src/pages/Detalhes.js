@@ -1,13 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import React, { useEffect } from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function Detalhes({ navigation, route }) {
   const { personagem } = route.params;
 
   useEffect(() => {
-    navigation.setOptions({ name: personagem.name });
-  }, []);
-  
+    navigation.setOptions({ title: personagem.name });
+  }, [navigation, personagem.name]);
+
+  const handleButton1Press = () => {
+    navigation.navigate('Naves');  // Navega para a tela de Naves
+  };
+
+  const handleButton2Press = () => {
+    navigation.navigate('Filmes'); //Navega para a tela de Filmes 
+  };
+
   return (
     <View style={styles.container}>
       <Text style={styles.titulo}>{personagem.name}</Text>
@@ -17,6 +25,15 @@ export default function Detalhes({ navigation, route }) {
       <Text style={styles.texto}>Cor da Pele: {personagem.skin_color}</Text>
       <Text style={styles.texto}>Cor dos Olhos: {personagem.eye_color}</Text>
       <Text style={styles.texto}>Gênero: {personagem.gender}</Text>
+
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button} onPress={handleButton1Press}>
+          <Text style={styles.buttonText}>Naves</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.button} onPress={handleButton2Press}>
+          <Text style={styles.buttonText}>Filmes</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -25,15 +42,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 30,
-    backgroundColor: '#fff',
+    backgroundColor: '#000000',  
   },
   titulo: {
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
+    color: '#FFD700',  
   },
   texto: {
     padding: 5,
-    fontSize: 15
-  }
+    fontSize: 15,
+    color: '#FFD700',  
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 40,
+  },
+  button: {
+    backgroundColor: '#555D50' ,  
+    padding: 10,
+    borderRadius: 5,
+    width: 120,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#FFD700',  
+    fontSize: 16,
+  },
 });

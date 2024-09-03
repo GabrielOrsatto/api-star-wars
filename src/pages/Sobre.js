@@ -1,11 +1,11 @@
 import React from 'react';
-import { View, Text, StyleSheet,  } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Sobre() {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>
-        Gabriel Orsatto 1135097@atitus.edu.br (1135097){"\n"}
+        Gabriel Orsatto 1135097@atitus.edu.br (1135097){"\n"}{"\n"}
         Otávio Lorenzatto 1134984@atitus.edu.br (1134984)
       </Text>
     </View>
@@ -18,9 +18,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 20,
+    backgroundColor: '#000',  
   },
-    texto: {
-        fontSize: 16,
-    }
-  
+  texto: {
+    fontSize: 16,
+    color: '#FFD700',  
+  },
 });
