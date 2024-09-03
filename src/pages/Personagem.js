@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, FlatList, TouchableOpacity } from 'react-native';
 import axios from 'axios';
 
 const nomesDosPersonagens = ["Luke Skywalker", "Darth Vader", "Han Solo", "Yoda", "Chewbacca"];
@@ -21,7 +21,7 @@ async function obterPersonagem(nomeDoPersonagem) {
   }
 }
 
-export default function Personagem() {
+export default function Personagens({ navigation }) {
   const [personagens, setPersonagens] = useState([]);
 
   async function listarPersonagens() {
@@ -41,16 +41,17 @@ export default function Personagem() {
 
   return (
     <View style={styles.container}>
-      <Text>Personagens de Star Wars:</Text>
+      <Text style={styles.titulo}>Personagens de Star Wars:</Text>
       <FlatList
         data={personagens}
         keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
-          <View style={styles.item}>
+          <TouchableOpacity
+            style={styles.item}
+            onPress={() => navigation.navigate('Detalhes', { personagem: item })}
+          >
             <Text>{item.name}</Text>
-            <Text>Altura: {item.height}</Text>
-            <Text>Peso: {item.mass}</Text>
-          </View>
+          </TouchableOpacity>
         )}
       />
     </View>
@@ -65,9 +66,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingTop: 50,
   },
+  titulo:{
+    paddingBottom: 15
+  },
   item: {
-    padding: 10,
-    marginVertical: 8,
+    padding: 20,
+    marginVertical: 15,
     backgroundColor: '#f9c2ff',
   },
 });
