@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import React, { useEffect } from "react";
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function Detalhes({ navigation, route }) {
   const { personagem } = route.params;
@@ -9,11 +9,11 @@ export default function Detalhes({ navigation, route }) {
   }, [navigation, personagem.name]);
 
   const navegacaoNaves = () => {
-    navigation.navigate('Naves', { starships: personagem.starships });
+    navigation.navigate("Naves", { starships: personagem.starships , personagem: personagem.name });
   };
 
   const navegacaoFilmes = () => {
-    navigation.navigate('Filmes', { movies: personagem.movies });
+    navigation.navigate("Filmes", { films: personagem.films, personagem: personagem.name });
   };
 
   return (
@@ -42,33 +42,33 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 30,
-    backgroundColor: '#000000',  
+    backgroundColor: "#000000",
   },
   titulo: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
-    color: '#FFD700',  
+    color: "#FFD700",
   },
   texto: {
     padding: 5,
     fontSize: 15,
-    color: '#FFD700',  
+    color: "#FFD700",
   },
   buttonContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
+    flexDirection: "row",
+    justifyContent: "space-around",
     marginTop: 40,
   },
   button: {
-    backgroundColor: '#555D50' ,  
+    backgroundColor: "#555D50",
     padding: 10,
     borderRadius: 5,
     width: 120,
-    alignItems: 'center',
+    alignItems: "center",
   },
   buttonText: {
-    color: '#FFD700',  
+    color: "#FFD700",
     fontSize: 16,
   },
 });

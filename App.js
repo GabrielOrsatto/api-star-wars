@@ -1,13 +1,13 @@
-import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Personagem from './src/pages/Personagem';
-import Detalhes from './src/pages/Detalhes';
-import Sobre from './src/pages/Sobre';
-import Naves from './src/pages/Naves'; 
-import Filmes from './src/pages/Filmes';
-import { Button } from 'react-native';
-import StarWarsTheme from './src/pages/Theme';  
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Personagem from "./src/pages/Personagem";
+import Detalhes from "./src/pages/Detalhes";
+import Sobre from "./src/pages/Sobre";
+import Naves from "./src/pages/Naves";
+import Filmes from "./src/pages/Filmes";
+import { Button } from "react-native";
+import StarWarsTheme from "./src/pages/Theme";
 
 const Stack = createNativeStackNavigator();
 
@@ -23,9 +23,9 @@ const App = () => {
             headerTitleAlign: "center",
             headerRight: () => (
               <Button
-                onPress={() => navigation.navigate('Sobre')}  
+                onPress={() => navigation.navigate("Sobre")}
                 title="Sobre"
-                color="#FFD700"  
+                color="#FFD700"
               />
             ),
           })}
@@ -65,6 +65,6 @@ const App = () => {
       </Stack.Navigator>
     </NavigationContainer>
   );
-}
+};
 
 export default App;
