@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         color: "#FFD700",
       },
     lista: {
-        backgroundColor: '#555D50',
+        backgroundColor: '#010175',
         padding: 20,
         margin: 20,
         borderRadius: 10,
