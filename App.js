@@ -7,7 +7,7 @@ import Sobre from "./src/pages/Sobre";
 import Naves from "./src/pages/Naves";
 import Filmes from "./src/pages/Filmes";
 import { Button } from "react-native";
-import StarWarsTheme from "./src/pages/Theme";
+import StarWarsTheme from "./src/pages/theme";
 
 const Stack = createNativeStackNavigator();
 
