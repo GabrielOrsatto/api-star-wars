@@ -5,7 +5,7 @@ import Personagem from './src/pages/Personagem';
 import Detalhes from './src/pages/Detalhes';
 import Sobre from './src/pages/Sobre';
 import { Button } from 'react-native';
-import StarWarsTheme from './src/pages/theme';  
+import StarWarsTheme from './src/pages/Theme';  
 
 const Stack = createNativeStackNavigator();
 
