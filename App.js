@@ -4,6 +4,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Personagem from './src/pages/Personagem';
 import Detalhes from './src/pages/Detalhes';
 import Sobre from './src/pages/Sobre';
+import Naves from './src/pages/Naves'; 
+import Filmes from './src/pages/Filmes';
 import { Button } from 'react-native';
 import StarWarsTheme from './src/pages/Theme';  
 
@@ -41,6 +43,22 @@ const App = () => {
           component={Detalhes}
           options={{
             headerTitle: "Detalhes",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="Naves"
+          component={Naves}
+          options={{
+            headerTitle: "Naves",
+            headerTitleAlign: "center",
+          }}
+        />
+        <Stack.Screen
+          name="Filmes"
+          component={Filmes}
+          options={{
+            headerTitle: "Filmes",
             headerTitleAlign: "center",
           }}
         />

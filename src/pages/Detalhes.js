@@ -9,11 +9,11 @@ export default function Detalhes({ navigation, route }) {
   }, [navigation, personagem.name]);
 
   const handleButton1Press = () => {
-    navigation.navigate('Naves');  // Navega para a tela de Naves
+    navigation.navigate('Naves');
   };
 
   const handleButton2Press = () => {
-    navigation.navigate('Filmes'); //Navega para a tela de Filmes 
+    navigation.navigate('Filmes');
   };
 
   return (

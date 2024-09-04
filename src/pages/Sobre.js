@@ -5,8 +5,8 @@ export default function Sobre() {
   return (
     <View style={styles.container}>
       <Text style={styles.texto}>
-        Gabriel Orsatto 1135097@atitus.edu.br (1135097){"\n"}{"\n"}
-        Otávio Lorenzatto 1134984@atitus.edu.br (1134984)
+        Gabriel Orsatto {"\n"}1135097@atitus.edu.br {"\n"}RA 1135097{"\n"}{"\n"}
+        Otávio Lorenzatto {"\n"}1134984@atitus.edu.br {"\n"}RA 1134984
       </Text>
     </View>
   );
@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 20,
     backgroundColor: '#000',  
   },
   texto: {
     fontSize: 16,
-    color: '#FFD700',  
+    color: '#FFD700', 
+    lineHeight: 25
   },
 });
