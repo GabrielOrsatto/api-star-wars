@@ -40,14 +40,13 @@ export default function Personagens({ navigation }) {
   }, []);
 
   return (
-    <View style={styles.container}>
+    <View>
       <Text style={styles.titulo}>Personagens de Star Wars:</Text>
       <FlatList
         data={personagens}
         keyExtractor={(item) => item.name}
         renderItem={({ item }) => (
           <TouchableOpacity
-            style={styles.item}
             onPress={() => navigation.navigate('Detalhes', { personagem: item })}
           >
             <Text>{item.name}</Text>
@@ -56,22 +55,26 @@ export default function Personagens({ navigation }) {
       />
     </View>
   );
-}
-
+};
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 50,
-  },
-  titulo:{
-    paddingBottom: 15
-  },
-  item: {
+    alignItems: 'center',
     padding: 20,
-    marginVertical: 15,
-    backgroundColor: '#f9c2ff',
+    backgroundColor: '#000',  
+  },
+
+  titulo:{
+    paddingBottom: 15,
+    alignItems: center, 
+    color: '#FFD700',
+  },
+
+  texto: {
+    fontSize: 16,
+    justifyContent: 'center',
+    alignItems: 'center',
+    color: '#FFD700',  
   },
 });
