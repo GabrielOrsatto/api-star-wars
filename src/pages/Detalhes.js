@@ -8,12 +8,12 @@ export default function Detalhes({ navigation, route }) {
     navigation.setOptions({ title: personagem.name });
   }, [navigation, personagem.name]);
 
-  const handleButton1Press = () => {
-    navigation.navigate('Naves');
+  const navegacaoNaves = () => {
+    navigation.navigate('Naves', { starships: personagem.starships });
   };
 
-  const handleButton2Press = () => {
-    navigation.navigate('Filmes');
+  const navegacaoFilmes = () => {
+    navigation.navigate('Filmes', { movies: personagem.movies });
   };
 
   return (
@@ -27,10 +27,10 @@ export default function Detalhes({ navigation, route }) {
       <Text style={styles.texto}>Gênero: {personagem.gender}</Text>
 
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button} onPress={handleButton1Press}>
+        <TouchableOpacity style={styles.button} onPress={navegacaoNaves}>
           <Text style={styles.buttonText}>Naves</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={handleButton2Press}>
+        <TouchableOpacity style={styles.button} onPress={navegacaoFilmes}>
           <Text style={styles.buttonText}>Filmes</Text>
         </TouchableOpacity>
       </View>
